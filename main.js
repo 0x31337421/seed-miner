@@ -2,7 +2,10 @@
 const ethers = require('ethers');
 const chalk = require('chalk');
 
-const target = process.argv[2].toLowerCase();
+const target = (process.argv[2] == undefined)
+  ? ''
+  : process.argv[2].toLowerCase();
+
 const averageAttempt = 16 ** target.length;
 let tries = averageAttempt;
 let stillTrying = true;
